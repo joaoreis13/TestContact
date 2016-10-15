@@ -20,10 +20,13 @@ def receive_msg():
     print ('DEBUG message')
     print(request.get_json())
 
-    return message.handle(request.get_json())
+   # return message.handle(request.get_json())
 
 
 @application.route('/notification')
 def receive_not():
 
     return notification.handle(request.get_json())
+
+if __name__ == '__main__':
+    application.run(debug=True)
