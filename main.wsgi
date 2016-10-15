@@ -17,7 +17,9 @@ cmdUrl = application.config['CMD_URL']
 @application.route('/message')
 def receive_msg():
 
+    print ('DEBUG message')
     print(request.get_json())
+
     return message.handle(request.get_json())
 
 
