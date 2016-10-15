@@ -20,4 +20,4 @@ def receive_msg():
 @application.route('/notification')
 def receive_not():
 
-    return not.handle(request.get_json())
+    return ntf.handle(request.get_json())
