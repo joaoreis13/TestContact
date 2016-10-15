@@ -14,13 +14,10 @@ notUrl = application.config['NOT_URL']
 cmdUrl = application.config['CMD_URL']
 
 
-@application.route('/message')
+@application.route('/message', methods=['POST'])
 def receive_msg():
 
-    print ('DEBUG message')
-    print(request.get_json())
-
-   # return message.handle(request.get_json())
+    return message.handle(request.get_json())
 
 
 @application.route('/notification')
