@@ -18,7 +18,7 @@ cmdUrl = application.config['CMD_URL']
 def receive_msg():
 
     content = request.get_json()
-    print("Conteudo "+content)
+    print("Conteudo :"+json.dumps(content))
     return message.handle(content)
 
 
