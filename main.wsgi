@@ -14,10 +14,10 @@ cmdUrl = application.config['CMD_URL']
 @application.route('/message')
 def receive_msg():
 
-    return msg.handle(request.get_json())
+    return message.handle(request.get_json())
 
 
 @application.route('/notification')
 def receive_not():
 
-    return ntf.handle(request.get_json())
+    return notification.handle(request.get_json())
