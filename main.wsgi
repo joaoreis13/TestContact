@@ -17,7 +17,9 @@ cmdUrl = application.config['CMD_URL']
 @application.route('/message', methods=['POST'])
 def receive_msg():
 
-    return message.handle(request.get_json())
+    content = request.get_json()
+    print("Conteudo "+content)
+    return message.handle(content)
 
 
 @application.route('/notification')
