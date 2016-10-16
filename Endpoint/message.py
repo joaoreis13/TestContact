@@ -10,7 +10,7 @@ def handle(content):
         tResp = {'id':content['id'],'status':'recieved'}
 
     else:
-        tResp {'status':'ok'}
+        tResp = {'status':'ok'}
 
     resp = jsonify(tResp)
     resp.status_code = 202
