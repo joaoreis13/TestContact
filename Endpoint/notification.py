@@ -1,7 +1,7 @@
 import json
 from flask import jsonify
 
-def handle(content):
+def process(content):
 
 
     tResp = {}
