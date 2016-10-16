@@ -19,6 +19,7 @@ def receive_msg():
 
     content = request.get_json()
     print("Conteudo :"+json.dumps(content))
+
     return message.handle(content)
 
 
