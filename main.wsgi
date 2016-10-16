@@ -1,6 +1,9 @@
 from flask import Flask,request
 from Endpoint import *
 import json
+import sys
+
+sys.stdout = sys.stderr
 
 application = Flask(__name__)
 application.config.from_object('config')
@@ -11,13 +14,19 @@ notUrl = application.config['NOT_URL']
 cmdUrl = application.config['CMD_URL']
 
 
-@application.route('/message')
+@application.route('/message', methods=['POST'])
 def receive_msg():
 
-    return msg.handle(request.get_json())
+    content = request.get_json()
+    print("Conteudo :"+json.dumps(content))
+
+    return message.handle(content)
 
 
 @application.route('/notification')
 def receive_not():
 
-    return not.handle(request.get_json())
+    return notification.handle(request.get_json())
+
+if __name__ == '__main__':
+    application.run(debug=True)
