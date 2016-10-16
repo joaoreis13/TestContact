@@ -11,7 +11,6 @@ application.config.from_object('config')
 dbg = application.config['DEBUG']
 
 if dbg:
-    content = request.get_json()
     print("[INFO] Starting application outside main main method")
 
 @application.route('/message', methods=['POST'])
@@ -36,6 +35,5 @@ def receive_not():
 if __name__ == '__main__':
 
     if dbg:
-        content = request.get_json()
         print("[INFO] Starting application inside main method")
     application.run(debug=True)
