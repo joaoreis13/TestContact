@@ -23,7 +23,7 @@ def receive_msg():
     return Endpoint.recieveMessage(content)
 
 
-@application.route('/notification')
+@application.route('/notification',methods=['POST'])
 def receive_not():
 
     if dbg:
