@@ -19,8 +19,8 @@ def receive_msg():
         content = request.get_json()
         print("[MSG] Recieved Request:"+json.dumps(content))
 
-    Core.message.awnser(content)
-    return Endpoint.message.process(content)
+    Core.processMessage(content)
+    return Endpoint.recieveMessage(content)
 
 
 @application.route('/notification')
@@ -30,7 +30,7 @@ def receive_not():
         content = request.get_json()
         print("[NOT] Recieved Request:"+json.dumps(content))
 
-    return notification.process(request.get_json())
+    return Endpoint.recieveNotification(request.get_json())
 
 if __name__ == '__main__':
 

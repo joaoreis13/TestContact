@@ -1,6 +1,12 @@
 import requests, json,uuid
 
-def awnser(content):
+"""
+    Core.processMessage(content )
+
+    Receive a json with the content of a request in the
+    Blip API format.
+"""
+def processMessage(content):
 
     text = ''
 
@@ -23,4 +29,4 @@ def awnser(content):
     hdr{
         'Authorization':'key '+application.config['BLIP_KEY']
     }
-    sent = requests.post(application.config['BLIP_URL'],json=msg,headers=hdr)
+    sent = requests.post(application.config['MSG_URL'],json=msg,headers=hdr)
