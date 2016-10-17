@@ -26,7 +26,7 @@ def processMessage(content):
         'content' : text
     }
 
-    hdr{
+    hdr = {
         'Authorization':'key '+application.config['BLIP_KEY']
     }
     sent = requests.post(application.config['MSG_URL'],json=msg,headers=hdr)
