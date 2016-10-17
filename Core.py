@@ -10,10 +10,10 @@ def processMessage(content):
 
     text = ''
 
-    if (content['from'] == application.config['CUSTOM_USR'])
+    if content['from'] == application.config['CUSTOM_USR']:
         text = application.config['CUSTOM_MSG']
 
-    else
+    else:
 
         blip.getUserInfo(content['from'])
         text ='Olá, bem vindo ao Test Bot. Isso é somente um exemplo de um bot em Python+Flask!'
