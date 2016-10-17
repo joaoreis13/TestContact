@@ -1,4 +1,4 @@
-from flask import Flask,Request
+from flask import Flask,request
 import Endpoint,Core, json, sys
 
 
