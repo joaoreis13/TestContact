@@ -1,5 +1,5 @@
 from flask import Flask,Request
-import Endpoint,Core, json, sys,req
+import Endpoint,Core, json, sys
 
 
 sys.stdout = sys.stderr
