@@ -1,4 +1,4 @@
-from flask import Flask,request
+from flask import Flask
 import Endpoint,Core, json, sys
 
 
@@ -19,7 +19,7 @@ def receive_msg():
         content = request.get_json()
         print("[MSG] Recieved Request:"+json.dumps(content))
 
-    Core.processMessage(content)
+    Core.processMessage(content,application.config)
     return Endpoint.recieveMessage(content)
 
 

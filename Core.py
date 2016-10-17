@@ -1,4 +1,4 @@
-import requests, json,uuid
+import requests,json,uuid
 
 """
     Core.processMessage(content )
@@ -6,12 +6,12 @@ import requests, json,uuid
     Receive a json with the content of a request in the
     Blip API format.
 """
-def processMessage(content):
+def processMessage(content,config):
 
     text = ''
 
-    if content['from'] == application.config['CUSTOM_USR']:
-        text = application.config['CUSTOM_MSG']
+    if content['from'] == config['CUSTOM_USR']:
+        text = config['CUSTOM_MSG']
 
     else:
 
@@ -27,6 +27,6 @@ def processMessage(content):
     }
 
     hdr = {
-        'Authorization':'key '+application.config['BLIP_KEY']
+        'Authorization':'key '+config['BLIP_KEY']
     }
-    sent = requests.post(application.config['MSG_URL'],json=msg,headers=hdr)
+    sent = requests.post(config['MSG_URL'],json=msg,headers=hdr)
