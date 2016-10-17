@@ -20,10 +20,10 @@ def processMessage(content):
 
     msg = {
 
-        'id' = str(uuid.uuid4()),
-        'to' = content['from'],
-        'type' = 'text/plain',
-        'content' = text
+        'id' : str(uuid.uuid4()),
+        'to' : content['from'],
+        'type': 'text/plain',
+        'content' : text
     }
 
     hdr{
