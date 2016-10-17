@@ -1,3 +1,4 @@
+from flask import current_app as app
 import requests,json,uuid
 
 """
@@ -6,7 +7,7 @@ import requests,json,uuid
     Receive a json with the content of a request in the
     Blip API format.
 """
-def processMessage(content,config):
+def processMessage(content):
 
     text = ''
 

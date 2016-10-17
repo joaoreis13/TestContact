@@ -19,7 +19,7 @@ def receive_msg():
         content = request.get_json()
         print("[MSG] Recieved Request:"+json.dumps(content))
 
-    Core.processMessage(content,application.config)
+    Core.processMessage(content)
     return Endpoint.recieveMessage(content)
 
 
