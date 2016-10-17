@@ -11,7 +11,7 @@ def processMessage(content):
 
     text = ''
 
-    if content['from'] == config['CUSTOM_USR']:
+    if content['from'] == app.config['CUSTOM_USR']:
         text = config['CUSTOM_MSG']
 
     else:
@@ -28,6 +28,6 @@ def processMessage(content):
     }
 
     hdr = {
-        'Authorization':'key '+config['BLIP_KEY']
+        'Authorization':'key '+ app.config['BLIP_KEY']
     }
-    sent = requests.post(config['MSG_URL'],json=msg,headers=hdr)
+    sent = requests.post(app.config['MSG_URL'],json=msg,headers=hdr)
