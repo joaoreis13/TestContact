@@ -19,15 +19,7 @@ def recieveMessage(content):
 
 def recieveNotification(content):
 
-
-    tResp = {}
-
-    if content['type'] == 'text/plain' :
-
-        tResp = {'id':content['id'],'status':'recieved'}
-
-    else:
-        tResp = {'status':'ok'}
+    tResp = {'status':'ok'}
 
     resp = jsonify(tResp)
     resp.status_code = 202
