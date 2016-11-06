@@ -10,17 +10,13 @@ application.config.from_object('config')
 
 
 #SET ENVIRONMENT VARIABLES
-if os.environ.get('BLIP_KEY') != None:
-    application.config['BLIP_KEY'] = os.environ['BLIP_KEY']
+application.config['BLIP_KEY'] = os.getenv( 'BLIP_KEY',application.config['BLIP_KEY'] )
 
-if os.environ.get('CUSTOM_USR') != None:
-    application.config['CUSTOM_USR'] = os.environ['CUSTOM_USR']
+application.config['CUSTOM_USR'] = os.getenv('CUSTOM_USR',application.config['CUSTOM_USR'])
 
-if os.environ.get('CUSTOM_MSG') != None:
-    application.config['CUSTOM_MSG']= os.environ['CUSTOM_MSG']
+application.config['CUSTOM_MSG']= os.getenv('CUSTOM_MSG',application.config['CUSTOM_MSG'])
 
-if os.environ.get('DEBUG') != None:
-    application.config['DEBUG']= os.environ['DEBUG']
+application.config['DEBUG']= os.getenv('DEBUG',False)
 
 
 dbg = application.config['DEBUG']

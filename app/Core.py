@@ -11,7 +11,10 @@ def processMessage(content):
 
     text = ''
 
-    if content['from'] == app.config['CUSTOM_USR']:
+    custom_usr = app.config['CUSTOM_USR'].split(';')
+
+    if content['from'] in custom_usr:
+
         text = app.config['CUSTOM_MSG']
 
     else:
