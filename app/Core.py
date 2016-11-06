@@ -11,7 +11,10 @@ def processMessage(content):
 
     text = ''
 
-    if content['from'] == app.config['CUSTOM_USR']:
+    custom_usr = app.config['CUSTOM_USR'].split(';')
+
+    if content['from'] in custom_usr:
+
         text = app.config['CUSTOM_MSG']
 
     else:
@@ -29,4 +32,10 @@ def processMessage(content):
     hdr = {
         'Authorization':'key '+ app.config['BLIP_KEY']
     }
+
+    print("Sending:")
+    print(msg)
+    print(hdr)
     sent = requests.post(app.config['MSG_URL'],json=msg,headers=hdr)
+
+    print(sent)

@@ -1,11 +1,23 @@
 from flask import Flask,request
-import Endpoint,Core, json, sys
+from . import Endpoint,Core
+import json, sys,os
 
 
 sys.stdout = sys.stderr
 
 application = Flask(__name__)
 application.config.from_object('config')
+
+
+#SET ENVIRONMENT VARIABLES
+application.config['BLIP_KEY'] = os.getenv( 'BLIP_KEY',application.config['BLIP_KEY'] )
+
+application.config['CUSTOM_USR'] = os.getenv('CUSTOM_USR',application.config['CUSTOM_USR'])
+
+application.config['CUSTOM_MSG']= os.getenv('CUSTOM_MSG',application.config['CUSTOM_MSG'])
+
+application.config['DEBUG']= os.getenv('DEBUG',False)
+
 
 dbg = application.config['DEBUG']
 
@@ -15,8 +27,8 @@ if dbg:
 @application.route('/message', methods=['POST'])
 def receive_msg():
 
+    content = request.get_json()
     if dbg:
-        content = request.get_json()
         print("[MSG] Recieved Request:"+json.dumps(content))
 
     Core.processMessage(content)
