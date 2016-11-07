@@ -13,5 +13,5 @@ Para utilizar esse bot siga os seguintes passos:
 * Crie uma variável, ou coloque no arquivo **config.py**, com o nome de *BLIP_KEY* que contenha sua chave da plataforma BLiP
 * Siga as instruções da plataforma BLiP par apublicar os canais que deseja.
 
-*Opcional* : Caso queira, pode configurar uma variável com o nome *CUSTOM_USR* contendo os usuários que você queira que receba uma mensagem customizada. Cada usuário deve ser separado por ';'. Esses usuários devem ser os IDs enviados por cada canal, usuários do Telegram, por exemplo, é no formato **ID_UNICO@telegram.msging.net**.
+*Opcional* : Caso queira, pode configurar uma variável com o nome *CUSTOM_USR* contendo os usuários que você queira que receba uma mensagem customizada. Cada usuário deve ser separado por ';'. Esses usuários devem ser os IDs enviados por cada canal, usuários do Telegram, por exemplo, é no formato **ID_UNICO@telegram.gw.msging.net**.
 A mensagem customizada é definida na variável *CUSTOM_MSG*.
