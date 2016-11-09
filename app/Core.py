@@ -9,6 +9,10 @@ import requests,json,uuid
 """
 def processMessage(content):
 
+    #Caso não seja uma mensagem de texto simplemente ignora a mensagem
+    if content['type'] != 'text/plain':
+        return
+
     text = ''
 
     custom_usr = app.config['CUSTOM_USR'].split(';')
